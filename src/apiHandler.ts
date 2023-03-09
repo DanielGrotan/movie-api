@@ -16,7 +16,7 @@ function extractMovieData(data: any): MovieData {
       data.Year.slice(-1).charCodeAt(0) === 8211
         ? data.Year.slice(0, -1)
         : data.Year,
-    type: data.Type,
+    type: data.Type.slice(0, 1).toUpperCase() + data.Type.slice(1),
     imdbId: data.imdbID,
     posterUrl: data.Poster,
   };
